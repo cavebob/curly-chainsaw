@@ -1,8 +1,34 @@
 /*!
  * Theme Name:     Berlin
- * Version:        1.4
+ * Version:        1.5
  * Last Updated:   2023-05-10
  */
+:root {
+  --main: hsl(204, 77%, 12%);
+  --tableCell: hsl(204, 77%, 12%);
+  --tableCell2: hsl(204, 77%, 12%);
+  --tableCell3: hsl(202, 81%, 14%);
+  --dark: hsl(203, 80%, 8%);
+  --collapsables: hsla(203, 80%, 8%, 0.643);
+  --hoverHL: hsl(203, 80%, 8%);
+  --weirdwhite: hsl(203, 80%, 8%);
+  --white: hsl(0, 0%, 93%);
+  --shittyborder: hsl(206, 41%, 54%);
+  --searchDropdown: hsl(207, 43%, 20%);
+  --selected: hsl(207, 43%, 37%);
+  --tagText: hsl(0, 0%, 0%);
+  --menuFont: hsl(206, 41%, 54%);
+  --genres: hsl(206, 75%, 70%);
+  --menuHL: #00ccff;
+  --hovernotifications: hsl(192, 100%, 65%);
+  --user: hsl(43, 100%, 71%);
+  --completed: hsl(37, 100%, 64%);
+  --internal: hsl(43, 100%, 71%);
+  --RatioBlue: hsl(203, 80%, 44%);
+  --UploadGreen: hsl(113, 33%, 50%);
+  --DownBonusRed: hsl(354, 71%, 56%);
+  --bs: 0px 8px 15px rgba(0, 0, 0, 0.5)
+}
 #searchselector > li,
 #sitesearchform,
 #tabs > .tab a,
@@ -21,32 +47,6 @@ td[style="border: 1px black dashed"] {
 .grid__item,
 form td.embedded {
   vertical-align: top
-}
-:root {
-  --main: #072336;
-  --tableCell: #072336;
-  --tableCell2: #072336;
-  --tableCell3: #072c42;
-  --dark: #041824;
-  --collapsables: #041824a4;
-  --hoverHL: #041824;
-  --weirdwhite: #041824;
-  --white: #eeeeee;
-  --shittyborder: #5990b9;
-  --searchDropdown: #1d3549;
-  --selected: #356286;
-  --tagText: #000000;
-  --menuFont: #5990b9;
-  --genres: #78baec;
-  --menuHL: #0cf;
-  --hovernotifications: #4bdbff;
-  --user: #ffd56b;
-  --completed: #ffba49;
-  --internal: #FFD56B;
-  --RatioBlue: #1685CA;
-  --UploadGreen: #5fa855;
-  --DownBonusRed: #df4151;
-  --bs: 0px 8px 15px rgba(0, 0, 0, 0.5)
 }
 #torrent-list tr > td:nth-child(3) > a[href^="/film/info?id="] {
   background-color: var(--main);
@@ -517,6 +517,14 @@ body > table:first-of-type {
   text-align: center;
   margin-bottom: 20px
 }
+#sitesearch #searchselector {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-flow: row nowrap;
+  justify-content: center;
+
+}
 #searchselector .selected {
   color: var(--menuHL);
   font-size: 11px
@@ -524,7 +532,8 @@ body > table:first-of-type {
 #searchselector > li {
   font-weight: 700;
   font-size: 11px;
-  padding: 0 3px;
+  padding: 3px 6px;
+  margin: 0;
   cursor: pointer;
   color: var(--menuFont)
 }
@@ -592,11 +601,16 @@ body > table:first-of-type .embedded {
   text-align: right;
   padding: 0 5px
 }
-body > table:first-of-type .embedded:nth-of-type(1),
-body > table:first-of-type .embedded:nth-of-type(2) {
+#header > tbody > tr {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .embedded {
   width: 33%
 }
-body > table:first-of-type .embedded:nth-of-type(3) {
+#header .alert-box {
   white-space: nowrap
 }
 body > table:first-of-type .embedded .curuser-stats {
@@ -940,7 +954,9 @@ td.bottom > table[width="500"]:first-of-type td a,
 td.bottom > table[width="800"]:first-of-type td a {
   -webkit-transition: background-color .2s ease-out,color .2s ease-out;
   -moz-transition: background-color .2s ease-out,color .2s ease-out;
-  -o-transition: background-color .2s ease-out,color .2s ease-out
+  -o-transition: background-color .2s ease-out,color .2s ease-out;
+  transition: background-color .2s ease-out,color .2s ease-out;
+
 }
 @media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape) {
   html {
